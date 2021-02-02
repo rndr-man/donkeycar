@@ -53,22 +53,18 @@ If you don't have a joystick then you can skip to next section - [train an autop
 
 You may find that it helps to use a physical joystick device to control your vehicle.
 
-### Setup Bluetooth and pair joystick
-
-Check the [Controllers](/parts/controllers/#physical-joystick-controller) section to read about setting up the bluetooth connection.
-
 ### Start car
 
 ```bash
 cd ~/mycar
-python manage.py drive --js
+python manage.py drive
 ```
+Control your car from a web browser at the URL: `<your car's hostname.local>:8887` as described above
 
-Optionally, if you want joystick use to be sticky and don't want to add the --js each time, modify your __myconfig.py__ so that __USE_JOYSTICK_AS_DEFAULT = True__
+Pair your physical controller with your computer.
+(Google how to do it. e.g. [How to use a PS4 or Xbox One controller on Mac](https://www.macworld.co.uk/how-to/use-ps4-xbox-controller-mac-3626259/))
 
-```bash
-nano myconfig.py
-```
+In the webbrowser choose Gamepad as control mode. This lets you control the car with any gamepad (XBox One/X, PS3/4) that is either connected by USB or Bluetooth to your computer.
 
 ### Joystick Controls
 
@@ -87,6 +83,18 @@ nano myconfig.py
 * dpad left - Increase steering scale
 * dpad right - Decrease steering scale
 * Start - Toggle constant throttle. Sets to max throttle (modified by X and Triangle).
+
+-----
+
+### Optional: Setup a direct Bluetooth connection with the Pi
+
+Check the [Controllers](/parts/controllers/#physical-joystick-controller) section to read about setting up the bluetooth connection if you don't want to use a PC e.g. out in the field.
+
+Modify your myconfig.py so that USE_JOYSTICK_AS_DEFAULT = True
+
+```bash
+nano myconfig.py
+```
 
 -----
 
